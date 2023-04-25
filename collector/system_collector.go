@@ -225,6 +225,7 @@ func (s *SystemCollector) Collect(ch chan<- prometheus.Metric) {
 			//storagesLink := fmt.Sprintf("%sStorage/", systemOdataID)
 
 			//if storages, err := redfish.ListReferencedStorages(s.redfishClient, storagesLink); err != nil {
+			/* SKIP
 			storages, err := system.Storage()
 			if err != nil {
 				systemLogContext.WithField("operation", "system.Storage()").WithError(err).Error("error getting storage data from system")
@@ -256,6 +257,7 @@ func (s *SystemCollector) Collect(ch chan<- prometheus.Metric) {
 						}
 					}
 
+
 					//					if storagecontrollers, err := storage.StorageControllers(); err != nil {
 					//						log.Infof("Errors Getting storagecontrollers from system storage : %s", err)
 					//					} else {
@@ -282,8 +284,10 @@ func (s *SystemCollector) Collect(ch chan<- prometheus.Metric) {
 
 				}
 			}
+			ENDSKIP */
 			//process pci devices
 			//pciDevicesLink := fmt.Sprintf("%sPcidevice/", systemOdataID)
+			/* SKIP
 			pcieDevices, err := system.PCIeDevices()
 			if err != nil {
 				systemLogContext.WithField("operation", "system.PCIeDevices()").WithError(err).Error("error getting PCI-E device data from system")
@@ -296,6 +300,7 @@ func (s *SystemCollector) Collect(ch chan<- prometheus.Metric) {
 					go parsePcieDevice(ch, systemHostName, pcieDevice, wg5)
 				}
 			}
+			ENDSKIP */
 
 			//process networkinterfaces
 			networkInterfaces, err := system.NetworkInterfaces()
@@ -342,6 +347,7 @@ func (s *SystemCollector) Collect(ch chan<- prometheus.Metric) {
 				}
 			}
 			//process pci functions
+			/* SKIP
 			pcieFunctions, err := system.PCIeFunctions()
 			if err != nil {
 				systemLogContext.WithField("operation", "system.PCIeFunctions()").WithError(err).Error("error getting PCI-E device function data from system")
@@ -354,8 +360,10 @@ func (s *SystemCollector) Collect(ch chan<- prometheus.Metric) {
 					go parsePcieFunction(ch, systemHostName, pcieFunction, wg9)
 				}
 			}
+			ENDSKIP */
 
 			// process log services
+			/* SKIP
 			logServices, err := system.LogServices()
 			if err != nil {
 				systemLogContext.WithField("operation", "system.LogServices()").WithError(err).Error("error getting log services from system")
