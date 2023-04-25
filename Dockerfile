@@ -13,7 +13,7 @@ ENV GO111MODULE=on
 
 # Build dependencies
 RUN mkdir -p /go/src/github.com/ && \
-    git clone https://github.com/jenningsloy318/redfish_exporter /go/src/github.com/jenningsloy318/redfish_exporter && \
+    git clone https://github.com/fstarkenberg/redfish_exporter -b skipcollector /go/src/github.com/jenningsloy318/redfish_exporter && \
     cd /go/src/github.com/jenningsloy318/redfish_exporter && \
     make build
 
