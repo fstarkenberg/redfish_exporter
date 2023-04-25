@@ -379,6 +379,7 @@ func (s *SystemCollector) Collect(ch chan<- prometheus.Metric) {
 					}
 				}
 			}
+			ENDSKIP */
 
 			systemLogContext.Info("collector scrape completed")
 		}
