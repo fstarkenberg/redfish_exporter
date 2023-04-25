@@ -331,6 +331,7 @@ func (s *SystemCollector) Collect(ch chan<- prometheus.Metric) {
 			}
 
 			//process simple storage
+			/* SKIP
 			simpleStorages, err := system.SimpleStorages()
 			if err != nil {
 				systemLogContext.WithField("operation", "system.SimpleStorages()").WithError(err).Error("error getting simple storage data from system")
@@ -346,6 +347,7 @@ func (s *SystemCollector) Collect(ch chan<- prometheus.Metric) {
 					}
 				}
 			}
+			ENDSKIP */
 			//process pci functions
 			/* SKIP
 			pcieFunctions, err := system.PCIeFunctions()
